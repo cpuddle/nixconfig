@@ -1,0 +1,41 @@
+{
+    "modules-left": ["dwl/tags"],
+    "modules-center": ["dwl/window"],
+    "modules-right": ["tray", "custom/space", "pulseaudio", "custom/space","memory", "custom/space", "temperature#cpu", "custom/space", "temperature#gpu", "custom/space", "clock"],
+
+    "tray": {
+        "icon-size": 12,
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%m-%d-%Y %I:%M:%S}",
+        "interval": 1
+    },
+    "cpu": {
+        "format": "{usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}%"
+    },
+    "temperature#cpu": {
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 70,
+        "tooltip-format":"CPU Temp",
+        "format": "{temperatureC}°C"
+    },
+    "temperature#gpu": {
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "critical-threshold": 80,
+        "tooltip-format":"GPU Temp",
+        "format": "{temperatureC}°C"
+    },
+    "pulseaudio": {
+        "format": "{volume}%"
+    },
+  "custom/space": {
+    "format": "|",
+    "tooltip": false
+  }
+}

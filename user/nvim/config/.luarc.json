@@ -1,0 +1,10 @@
+{
+    "diagnostics.globals": [
+        "opts",
+        "vim",
+        "ft_cmds"
+    ],
+    "diagnostics.disable": [
+        "duplicate-index"
+    ]
+}

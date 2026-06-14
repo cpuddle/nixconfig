@@ -1,0 +1,94 @@
+* {
+    font-family: IosevkaTermSlab Nerd Font;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+window#waybar {
+    color: #b8bb26;
+    background: rgba(28, 28, 28, 1)
+    /*background-color: #282828;*/
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+#tags button {
+    padding: 1 0px;
+    color: #ebdbb2;
+    border: none;
+    border-radius: 0;
+}
+
+#tags button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    background-color: #3c3836;
+}
+
+#tags button.focused {
+    background-color: #b8bb26;
+    color: #282828;
+}
+
+#tags button.urgent {
+    background-color: #fbf1c7;
+    color: #3c3836;
+}
+
+#clock,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#network,
+#pulseaudio,
+#tray,
+
+#mpd {
+    padding: 0 10px;
+    color: #ebdbb2;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+#clock {
+    color: #8ec07c;
+}
+
+#temperature {
+    color: #fabd2f;
+}
+
+#temperature.critical {
+        color: #b57614;
+}
+
+#memory {
+    color: #b8bb26;
+}
+
+#network {
+    color: #fb4934;
+}
+
+#network.disconnected {
+    color: #9d0006;
+}
+
+#pulseaudio {
+    color: #fe8019;
+}
+
+#pulseaudio.muted {
+    color: #af3a03;
+}
+
+#tray {
+}
+
+#tray > .needs-attention {
+        color: #3c3836;
+}
