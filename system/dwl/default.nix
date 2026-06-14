@@ -6,9 +6,13 @@
         slurp
         waybar
         mako
-        thunar
         rofi
         swaybg
+        kdePackages = {
+            dolphin
+            ark
+            gwenview
+        };
     ];
 
     hardware.graphics = {

@@ -1,10 +1,17 @@
 {lib, config, pkgs, ... }:
 
 {
+    gtk = {
+        gtk3.extraConfig = {
+            gtk-decoration-layout = appmenu:none;
+        };
+        gtk4.extraConfig = {
+            gtk-decoration-layout = appmenu:none;
+        };
+    };
     stylix.targets.gtk = {
         extraCss = ''
-            gtk-decoration-layout = appmenu:none
-            * { font-weight: bold; }
+            * { font-weight: 600; }
         '';
     };
 }
