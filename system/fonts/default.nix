@@ -27,5 +27,11 @@ in
             package = builtins.head mono;
             name = "Iosevka Term Slab Nerd Font";
         };
+        sizes = {
+            applications = 9;
+            desktop = 9;
+            popups = 9;
+            terminal = 9;
+        };
     };
 }
