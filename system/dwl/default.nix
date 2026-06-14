@@ -8,11 +8,9 @@
         mako
         rofi
         swaybg
-        kdePackages = {
-            dolphin
-            ark
-            gwenview
-        };
+        kdePackages.dolphin
+        kdePackages.ark
+        kdePackages.gwenview
     ];
 
     hardware.graphics = {
