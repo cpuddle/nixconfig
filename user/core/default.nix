@@ -9,5 +9,7 @@
         home.username = "collin";
         home.homeDirectory = "/home/collin";
         home.stateVersion = "26.05";
+        services.polkit-gnome.enable = true;
     };
+
 }

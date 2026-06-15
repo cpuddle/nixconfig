@@ -10,6 +10,12 @@
             package = pkgs.capitaine-cursors-themed;
             size = 24;
         };
+        icons = {
+            enable = true;
+            package = pkgs.gruvbox-plus-icons;
+            dark = "Gruvbox-Plus-Dark";
+            light = "Gruvbox-Plus-Light";
+        };
         targets = {
             grub.enable = false;
         };

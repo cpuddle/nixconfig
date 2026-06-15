@@ -1,7 +1,6 @@
 { inputs, lib, config, pkgs, ... }:
 
 {
-
     boot.loader.grub = {
         enable = true;
         efiSupport = true;
@@ -19,5 +18,4 @@
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot";
     };
-
 }
