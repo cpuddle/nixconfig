@@ -8,6 +8,12 @@
       ./bin
     ];
 
+    nix.gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 7d";
+    };
+
   networking.hostName = "proxima"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
