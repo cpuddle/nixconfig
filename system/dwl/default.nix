@@ -15,6 +15,7 @@
         thunar
         nemo-fileroller
         gparted
+        direnv
     ];
 
     hardware.graphics = {
