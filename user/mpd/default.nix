@@ -3,28 +3,26 @@
 {
     home.packages = with pkgs; [
         mpc
+        snapcast
+        rmpc
     ];
 
-    systemd.user.services.mpv-stream = {
+    systemd.user.services.snapclient = {
         Unit = {
-            Description = "MPV MPD stream";
-            After = "network.target";
+            Description = "Snapcast client";
+            After = "network.target sound.target";
         };
         Service = {
-            ExecStart = "${pkgs.mpv}/bin/mpv --no-video http://10.150.1.2:8880";
+            ExecStart = "${pkgs.snapcast}/bin/snapclient -h 10.150.1.2";
             Restart = "always";
-            RestartSec = 10;
+            RestartSec = 5;
         };
         Install = {
             WantedBy = [ "default.target" ];
         };
     };
 
-    programs.ncmpcpp = {
-	    enable = true;
-        settings = {
-            mpd_host = "media-server";
-            mpd_port = 6660;
-        };
+    xdg.configFile."rmpc/config.ron" = {
+        source = config.lib.file.mkOutOfStoreSymlink "${config.nixconfigDir}/user/mpv/config/config.ron";
     };
 }
