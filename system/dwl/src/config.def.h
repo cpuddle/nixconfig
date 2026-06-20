@@ -163,7 +163,7 @@ static const char *ncmpcpp[] = {"ncmpcpp_launch", NULL};
 static const char *poweroff[] = {"power_menu", NULL};
 static const char *musicrestart[] = {"music_restart", NULL};
 static const char *waybarrestart[] = {"waybar_reload", NULL};
-static const char *screenshot[] = {"screenshot"};
+static const char *screenshot[] = {"screenshot", NULL};
 
 static const Key keys[] = {
     /* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
