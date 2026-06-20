@@ -34,7 +34,10 @@
         dwl = {
             enable = true;
             package = pkgs.dwl.overrideAttrs (old : {
-                src = ./src;
+                src = builtins.path {
+                    path = ./src;
+                    name = "dwl-source";
+                };
                 version = "0.8-custom";
             });
         };
