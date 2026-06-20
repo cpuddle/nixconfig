@@ -3,7 +3,7 @@
     imports = [
         ./dwl-start.nix
         ./volume.nix
-        ./ncmpcpp-launch.nix
+        ./rmpc-launch.nix
         ./powermenu.nix
         ./waybar-reload.nix
         ./music-restart.nix

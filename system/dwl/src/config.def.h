@@ -159,7 +159,7 @@ static const char *browser[] = {"firefox", NULL};
 static const char *filemanager[] = {"thunar", NULL};
 static const char *volumeup[] = {"volume_up", NULL};
 static const char *volumedown[] = {"volume_down", NULL};
-static const char *ncmpcpp[] = {"rmpc_launch", NULL};
+static const char *rmpc[] = {"rmpc_launch", NULL};
 static const char *poweroff[] = {"power_menu", NULL};
 static const char *musicrestart[] = {"music_restart", NULL};
 static const char *waybarreload[] = {"waybar_reload", NULL};
@@ -175,7 +175,7 @@ static const Key keys[] = {
     {MODKEY,                            XKB_KEY_space,         spawn,          {.v = menucmd}},
     {MODKEY,                            XKB_KEY_b,             spawn,          {.v = browser}},
     {MODKEY,                            XKB_KEY_t,             spawn,          {.v = filemanager}},
-    {MODKEY,                            XKB_KEY_m,             spawn,          {.v = ncmpcpp}},
+    {MODKEY,                            XKB_KEY_m,             spawn,          {.v = rmpc}},
     {MODKEY,                            XKB_KEY_BackSpace,     spawn,          {.v = poweroff}},
 
     /* media */
