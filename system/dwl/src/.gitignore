@@ -1,4 +1,3 @@
 *.o
 dwl
-*-protocol.h
 config.h
