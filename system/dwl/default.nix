@@ -18,6 +18,13 @@
         direnv
     ];
 
+    environment = {
+        localBinInPath = true;
+        sessionVariables = {
+            PATH = [ "/usr/local/bin" ];
+        };
+    };
+
     hardware.graphics = {
         enable = true;
         enable32Bit = true;
