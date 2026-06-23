@@ -16,6 +16,9 @@
         nemo-fileroller
         gparted
         direnv
+        gnupg
+        pinentry-curses
+        btop
     ];
 
     environment = {
@@ -46,6 +49,17 @@
         };
         nm-applet = {
             enable = true;
+        };
+        
+        gnupg = {
+            agent = {
+                enable = true;
+                pinentryPackage = pkgs.pinentry-curses;
+                settings = {
+                    default-cache-ttl = 86400;
+                    max-cache-ttl = 604800;
+                };
+            };
         };
     };
 }

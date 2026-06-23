@@ -5,21 +5,34 @@ in
 {
     environment.systemPackages = [
         (pkgs.writeShellScriptBin "dwl-init" ''
-             if [ -f "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" ]; then
-                 . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
-             fi
+            # Wait for WAYLAND_DISPLAY to be set by dwl
+            timeout=20
+            while [ -z "$WAYLAND_DISPLAY" ] && [ $timeout -gt 0 ]; do
+                sleep 0.5
+                timeout=$((timeout - 1))
+            done
 
-             ${pkgs.swaybg}/bin/swaybg -i $HOME/nixconfig/assets/wallpapers/outer-wilds-4k.png -m fill -o DP-1 &
-             export XDG_CURRENT_DESKTOP=sway
-             systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-             dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DISPLAY
-             systemctl --user start polkit-gnome-agent
-             systemctl --user start xdg-desktop-portal-wlr
-             systemctl --user start xdg-desktop-portal
-        '')         
+            systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DISPLAY DBUS_SESSION_BUS_ADDRESS
+            dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DISPLAY
+
+            ${pkgs.swaybg}/bin/swaybg -i $HOME/nixconfig/assets/wallpapers/outer-wilds-4k.png -m fill &
+
+            systemctl --user restart polkit-gnome-agent
+            systemctl --user restart xdg-desktop-portal-wlr
+            systemctl --user restart xdg-desktop-portal
+            ${pkgs.gnupg}/bin/gpg --decrypt $HOME/.local/state/mutt_oauth2/collin.gpg > /dev/null 2>&1
+            sleep 5
+        '')
 
         (pkgs.writeShellScriptBin "dwl-start" ''
-            exec ${dwl}/bin/dwl -s dwl-init
+            if [ -f "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" ]; then
+                . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
+            fi
+
+            export XDG_CURRENT_DESKTOP=sway
+            export GPG_TTY=$(tty)
+
+            exec dbus-run-session -- ${dwl}/bin/dwl -s dwl-init
         '')
     ];
 }

@@ -6,12 +6,25 @@ let
 in
 
 {
-    fonts.packages = sans ++ serif ++ mono;
-
-    fonts.fontconfig.defaultFonts = {
-        sansSerif = [ "IBM Plex Sans Condensed" ];
-        monospace = [ "Iosevka Term Slab Nerd Font"];
-        serif = [ "Libre Baskerville" ];
+    fonts = {
+        packages = sans ++ serif ++ mono;
+        fontconfig = {
+            enable = true;
+            defaultFonts = {
+                sansSerif = [ "IBM Plex Sans Condensed" ];
+                monospace = [ "Iosevka Nerd Font"];
+                serif = [ "Libre Baskerville" ];
+            };
+            antialias = true;
+            hinting = {
+                enable = true;
+                style = "medium";       
+            };
+            subpixel = {
+                rgba = "rgb";      # match your monitor layout
+                lcdfilter = "default";
+            };
+        };
     };
 
     stylix.fonts = {
@@ -25,7 +38,7 @@ in
         };
         monospace = {
             package = builtins.head mono;
-            name = "Iosevka Term Slab Nerd Font";
+            name = "Iosevka Nerd Font";
         };
         sizes = {
             applications = 9;

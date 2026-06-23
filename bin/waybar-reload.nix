@@ -2,8 +2,7 @@
 {
     environment.systemPackages = [
         (pkgs.writeShellScriptBin "waybar_reload" ''
-            pkill -x waybar || true
-            sleep .5
+            ${pkgs.killall}/bin/killall -w waybar .waybar-wrapped 2>/dev/null || true
             ${pkgs.waybar}/bin/waybar &
             disown
         '')

@@ -153,17 +153,18 @@ static const enum libinput_config_tap_button_map button_map =
   }
 
 /* commands */
-static const char *termcmd[] = {"footclient", NULL};
-static const char *menucmd[] = {"rofi", "-show", "drun", NULL};
-static const char *browser[] = {"firefox", NULL};
-static const char *filemanager[] = {"thunar", NULL};
-static const char *volumeup[] = {"volume_up", NULL};
-static const char *volumedown[] = {"volume_down", NULL};
-static const char *rmpc[] = {"rmpc_launch", NULL};
-static const char *poweroff[] = {"power_menu", NULL};
-static const char *musicrestart[] = {"music_restart", NULL};
-static const char *waybarreload[] = {"waybar_reload", NULL};
-static const char *screenshot[] = {"screenshot", NULL};
+static const char *termcmd[]                = {"footclient", NULL};
+static const char *menucmd[]                = {"rofi", "-show", "drun", NULL};
+static const char *browser[]                = {"firefox", NULL};
+static const char *filemanager[]            = {"thunar", NULL};
+static const char *volumeup[]               = {"volume_up", NULL};
+static const char *volumedown[]             = {"volume_down", NULL};
+static const char *rmpc[]                   = {"rmpc_launch", NULL};
+static const char *poweroff[]               = {"power_menu", NULL};
+static const char *musicrestart[]           = {"music_restart", NULL};
+static const char *waybarreload[]           = {"waybar_reload", NULL};
+static const char *screenshot[]             = {"screenshot", NULL};
+static const char *email[]                  = {"email", NULL};
 
 
 static const Key keys[] = {
@@ -177,6 +178,7 @@ static const Key keys[] = {
     {MODKEY,                            XKB_KEY_t,             spawn,          {.v = filemanager}},
     {MODKEY,                            XKB_KEY_m,             spawn,          {.v = rmpc}},
     {MODKEY,                            XKB_KEY_BackSpace,     spawn,          {.v = poweroff}},
+    {MODKEY,                            XKB_KEY_e,             spawn,          {.v = email}},
 
     /* media */
     {MODKEY,                            XKB_KEY_equal,         spawn,          {.v = volumeup}},
@@ -199,9 +201,9 @@ static const Key keys[] = {
     {MODKEY | WLR_MODIFIER_SHIFT,       XKB_KEY_space,         togglefloating, {0}},
 
     /* layouts */
-    {MODKEY,                            XKB_KEY_e,             setlayout,      {.v = &layouts[0]}},
-    {MODKEY,                            XKB_KEY_w,             setlayout,      {.v = &layouts[1]}},
-    {MODKEY,                            XKB_KEY_n,             setlayout,      {.v = &layouts[2]}},
+    {MODKEY | WLR_MODIFIER_SHIFT,       XKB_KEY_v,             setlayout,      {.v = &layouts[0]}},
+    {MODKEY | WLR_MODIFIER_SHIFT,       XKB_KEY_b,             setlayout,      {.v = &layouts[1]}},
+    {MODKEY | WLR_MODIFIER_SHIFT,       XKB_KEY_n,             setlayout,      {.v = &layouts[2]}},
     {MODKEY,                            XKB_KEY_p,             setlayout,      {0}},
 
     /* monitors */

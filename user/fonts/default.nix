@@ -1,0 +1,21 @@
+{lib, config, pkgs, ... }:
+
+{
+    xdg.configFile."fontconfig/conf.d/05-rendering.conf".text = ''
+      <?xml version="1.0"?>
+      <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+      <fontconfig>
+        <match target="pattern">
+          <edit name="dpi" mode="assign"><double>96</double></edit>
+        </match>
+        <match target="font">
+          <edit name="antialias"  mode="assign"><bool>true</bool></edit>
+          <edit name="hinting"    mode="assign"><bool>true</bool></edit>
+          <edit name="hintstyle"  mode="assign"><const>hintslight</const></edit>
+          <edit name="rgba"       mode="assign"><const>rgb</const></edit>
+          <edit name="lcdfilter"  mode="assign"><const>lcddefault</const></edit>
+          <edit name="weight"     mode="assign"><int>180</int></edit>
+        </match>
+      </fontconfig>
+    '';
+}

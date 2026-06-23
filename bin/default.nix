@@ -8,5 +8,6 @@
         ./waybar-reload.nix
         ./music-restart.nix
         ./screenshot.nix
+        ./email.nix
     ];
 }
