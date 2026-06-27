@@ -8,12 +8,6 @@
       ./bin
     ];
 
-    nix.gc = {
-        automatic = true;
-        dates = "weekly";
-        options = "--delete-older-than 7d";
-    };
-
   networking.hostName = "proxima"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
@@ -41,9 +35,20 @@
     vim 
     wget
     git
+    sops
   ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix = {
+    settings = {
+        experimental-features = [ "nix-command" "flakes"];
+        auto-optimise-store = true;
+    };
+    gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 7d";
+    };
+  };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

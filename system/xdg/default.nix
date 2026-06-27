@@ -47,6 +47,8 @@
                 "text/markdown"                     = "nvim.desktop";
                 "text/x-shellscript"                = "nvim.desktop";
 
+                "application/epub+zip"              = "com.github.johnfactotum.Foliate.desktop";
+
                 # Archives
                 "application/zip"               = "org.gnome.FileRoller.desktop";
                 "application/x-tar"             = "org.gnome.FileRoller.desktop";

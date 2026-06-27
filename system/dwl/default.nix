@@ -19,6 +19,8 @@
         gnupg
         pinentry-curses
         btop
+        foliate
+        onlyoffice-desktopeditors
     ];
 
     environment = {
@@ -32,6 +34,8 @@
         enable = true;
         enable32Bit = true;
     };
+
+    services.udisks2.enable = true;
     
     programs = {
         dwl = {

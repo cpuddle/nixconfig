@@ -1,0 +1,11 @@
+keys:
+    - &users:
+      - &collin age1l265az9m75d7nmkmc03k2u7k8qeq5z7suenkp45f84rmv5zjlqdq8drk2y
+    - &hosts:
+      - &proxima age1jjg9c32n8kgsm82mqqxtmt5jwmmw0yq9trha0ww4rll0tj8g6gcqjr72k4
+creation_rules:
+    - path_regex: secrets.yaml$
+      key_groups:
+      - age:
+          - *collin
+          - *proxima

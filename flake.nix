@@ -11,8 +11,12 @@
             url = "github:nix-community/stylix/release-26.05";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        sops-nix = {
+            url = "github:Mic92/sops-nix";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
-    outputs = inputs@{ self, nixpkgs, home-manager, stylix, ... }: {
+    outputs = inputs@{ self, nixpkgs, home-manager, stylix, sops-nix, ... }: {
         nixosConfigurations.proxima = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
 	        modules = [
@@ -27,6 +31,7 @@
 		            };
 		        }
                 stylix.nixosModules.stylix
+                sops-nix.nixosModules.sops
                 {
                     nixpkgs.overlays = [ 
                         (import ./overlays { inherit inputs; lib = nixpkgs.lib; }).default 
