@@ -3,6 +3,6 @@
 {
     stylix.targets.waybar.enable = false;
     xdg.configFile."waybar" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.nixconfigDir}/user/waybar/config";
+        source = config.lib.file.mkOutOfStoreSymlink "${config.nixconfigDir}/home/waybar/config";
     };
 }

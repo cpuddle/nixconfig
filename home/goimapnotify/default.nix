@@ -23,6 +23,6 @@
     };
 
     xdg.configFile."goimapnotify/goimapnotify.yaml" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.nixconfigDir}/user/goimapnotify/config/goimapnotify.yaml";
+        source = config.lib.file.mkOutOfStoreSymlink "${config.nixconfigDir}/home/goimapnotify/config/goimapnotify.yaml";
     };
 }

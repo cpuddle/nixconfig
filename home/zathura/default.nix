@@ -6,6 +6,6 @@
     ];
 
     xdg.configFile."zathura" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.nixconfigDir}/user/zathura/config";
+        source = config.lib.file.mkOutOfStoreSymlink "${config.nixconfigDir}/home/zathura/config";
     };
 }

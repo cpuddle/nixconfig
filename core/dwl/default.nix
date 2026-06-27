@@ -21,6 +21,11 @@
         btop
         foliate
         onlyoffice-desktopeditors
+	vim
+	wget
+	git
+	sops
+	tree
     ];
 
     environment = {

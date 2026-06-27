@@ -20,13 +20,13 @@
         nixosConfigurations.proxima = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
 	        modules = [
-		        ./configuration.nix
+		        ./hosts/proxima
 		        home-manager.nixosModules.home-manager 
                 {
 		             home-manager = {
 			         useGlobalPkgs = true;
 			         useUserPackages = true;
-			         users.collin = import ./user;
+			         users.collin = import ./home;
 			         backupFileExtension = "backup";
 		            };
 		        }

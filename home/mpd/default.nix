@@ -23,6 +23,6 @@
     };
 
     xdg.configFile."rmpc/config.ron" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.nixconfigDir}/user/mpd/config/config.ron";
+        source = config.lib.file.mkOutOfStoreSymlink "${config.nixconfigDir}/home/mpd/config/config.ron";
     };
 }

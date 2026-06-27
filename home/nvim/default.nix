@@ -8,6 +8,6 @@
     };
 
     xdg.configFile."nvim" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.nixconfigDir}/user/nvim/config";
+        source = config.lib.file.mkOutOfStoreSymlink "${config.nixconfigDir}/home/nvim/config";
     };
 }

@@ -2,41 +2,23 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./system
-      ./bin
+    [
+      ./hardware.nix
+      ./networking.nix
+      ../../core
+      ../../bin
     ];
 
-  networking.hostName = "proxima"; # Define your hostname.
-
-  # Configure network connections interactively with nmcli or nmtui.
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
   time.timeZone = "America/Chicago";
-
-  programs.bash.enable = true;
 
   users.users.collin = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; 
-    packages = with pkgs; [
-      tree
-    ];
+    packages = with pkgs; [];
     shell = pkgs.bash;
   };
 
   nixpkgs.config.allowUnfree = true;
-
-  programs.firefox.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    vim 
-    wget
-    git
-    sops
-  ];
 
   nix = {
     settings = {

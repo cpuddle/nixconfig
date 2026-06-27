@@ -8,7 +8,7 @@
     ];
 
     xdg.configFile."aerc" = {
-        source = config.lib.file.mkOutOfStoreSymlink "${config.nixconfigDir}/user/aerc/config/";
+        source = config.lib.file.mkOutOfStoreSymlink "${config.nixconfigDir}/home/aerc/config/";
     };
 
     home.sessionVariables = {
