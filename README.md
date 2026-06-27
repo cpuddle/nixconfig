@@ -1,5 +1,8 @@
 # cpuddle's Nixos Configuration
 
+
+## Directory Structure
+```
 ├── assets
 │   ├── shodan-grub-theme
 │   │   └── Shodan.zip
@@ -174,3 +177,5 @@
 ├── pkgs
 │   └── shodan-grub-theme.nix
 └── secrets.yaml
+
+```
