@@ -24,40 +24,7 @@
 │   ├── default.nix
 │   ├── dwl
 │   │   ├── default.nix
-│   │   ├── default.nix.bak
 │   │   └── src
-│   │       ├── CHANGELOG.md
-│   │       ├── client.h
-│   │       ├── config.def.h
-│   │       ├── config.h.bak
-│   │       ├── config.mk
-│   │       ├── dwl.1
-│   │       ├── dwl.c
-│   │       ├── dwl.desktop
-│   │       ├── dwl-ipc-unstable-v2-protocol.c
-│   │       ├── dwl-ipc-unstable-v2.xml
-│   │       ├── LICENSE
-│   │       ├── LICENSE.dwm
-│   │       ├── LICENSE.sway
-│   │       ├── LICENSE.tinywl
-│   │       ├── Makefile
-│   │       ├── Patches
-│   │       │   ├── alwayscenter.patch
-│   │       │   ├── autostart.patch
-│   │       │   ├── cursortheme.patch
-│   │       │   ├── focus-tagset-output.patch
-│   │       │   ├── gaps.patch
-│   │       │   ├── ipc.patch
-│   │       │   ├── ipcpertag.patch
-│   │       │   └── warpcursor.patch
-│   │       ├── protocols
-│   │       │   ├── dwl-ipc-unstable-v2.xml
-│   │       │   ├── wlr-layer-shell-unstable-v1.xml
-│   │       │   └── wlr-output-power-management-unstable-v1.xml
-│   │       ├── README.md
-│   │       ├── shell.nix
-│   │       ├── util.c
-│   │       └── util.h
 │   ├── firefox
 │   │   └── default.nix
 │   ├── fonts
@@ -110,8 +77,6 @@
 │   ├── foot
 │   │   ├── config
 │   │   │   ├── foot.ini
-│   │   │   ├── foot.ini.backup
-│   │   │   └── gruvbox.ini -> /nix/store/cc5ssxrw3l12n668wfarnf20bb9mpspx-home-manager-files/.config/foot/gruvbox.ini
 │   │   └── default.nix
 │   ├── git
 │   │   └── default.nix
