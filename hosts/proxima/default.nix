@@ -5,6 +5,7 @@
     [
       ./hardware.nix
       ./networking.nix
+      ./nextcloud-sync.nix
       ../../core
       ../../bin
     ];
