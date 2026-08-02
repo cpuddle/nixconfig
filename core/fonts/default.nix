@@ -1,11 +1,23 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 let
-  sans = import ./sans { inherit pkgs; };
-  serif = import ./serif { inherit pkgs; };
-  mono = import ./monospace { inherit pkgs; };
-in
+    sans = import ./sans { inherit pkgs; };
+    serif = import ./serif { inherit pkgs; };
+    mono = import ./monospace { inherit pkgs; };
 
+    aggregatedFonts = pkgs.buildEnv {
+        name = "system-fonts";
+        paths = config.fonts.packages;
+        pathsToLink = [ "/share/fonts" ];
+    };
+
+    mkRoSymBind = path: {
+        device = path;
+        fsType = "fuse.bindfs";
+        options = [ "ro" "resolve-symlinks" "x-gvfs-hide" ];
+    };
+in
 {
+#    imports = [ ./flatpak-fonts.nix ];
     fonts = {
         packages = sans ++ serif ++ mono;
         fontconfig = {
@@ -47,4 +59,8 @@ in
             terminal = 9;
         };
     };
+
+    system.fsPackages = [ pkgs.bindfs ];
+
+    fileSystems."/usr/share/fonts" = mkRoSymBind "${aggregatedFonts}/share/fonts";
 }

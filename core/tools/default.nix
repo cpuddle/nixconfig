@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
+    services.flatpak.enable = true;
     environment.systemPackages = with pkgs; [
         python3
         cisco-packet-tracer_9

@@ -61,15 +61,14 @@
             enable = true;
             xdgOpenUsePortal = true;
             extraPortals = [ 
-                pkgs.xdg-desktop-portal-gtk
-                pkgs.xdg-desktop-portal-wlr
+                pkgs.kdePackages.xdg-desktop-portal-kde
             ];
             config = {
                 common = {
-                    default = [ "wlr" "gtk" ];
+                    default = [ "kde" ];
                 };
             };
-        };
+        };    
     };
 }
 

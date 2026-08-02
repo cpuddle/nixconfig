@@ -35,6 +35,7 @@
             makeHomeDir.umask = "077";
             services.login.makeHomeDir = true;
             services.sshd.makeHomeDir = true;
+            services.sddm.makeHomeDir = true;
         };
     };
 
