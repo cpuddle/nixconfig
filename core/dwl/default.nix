@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, pkgs-unstable, ... }:
 {
     environment.systemPackages = with pkgs; [
         wl-clipboard
@@ -12,7 +12,10 @@
         mako
         rofi
         swaybg
+        gvfs
         thunar
+        thunar-shares-plugin
+        thunar-archive-plugin
         nemo-fileroller
         gparted
         direnv
@@ -27,7 +30,6 @@
     	git
     	sops
     	tree
-        keepassxc
     ];
 
     environment = {
@@ -43,6 +45,10 @@
     };
 
     services.udisks2.enable = true;
+
+    services.gnome.evolution-data-server.enable = true;
+    services.gnome.gnome-online-accounts.enable = true;
+    services.gnome.gnome-keyring.enable = true;
     
     programs = {
         dwl = {
@@ -59,6 +65,10 @@
             enable = true;
         };
         nm-applet = {
+            enable = true;
+        };
+
+        dconf = {
             enable = true;
         };
         
